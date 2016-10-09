@@ -25,6 +25,7 @@ green = 100
 blue = 100
 
 def sendpwm(R, G, B):
+    print "sendPWM"
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
     GPIO.setup(16, GPIO.OUT)
@@ -62,7 +63,9 @@ def getpipe():
 
 def start():
     while True:
+        print "RED: " + red + " GREEN: " + green + " blue: " + blue
         sendpwm(red, green, blue)
+
         getpipe()
 
 
