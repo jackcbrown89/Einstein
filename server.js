@@ -20,7 +20,7 @@ app.get('/', function(res) {
 
 app.post('/turn-on', function(req, res) {
 	res.status(200).end();
-	console.log(req);
+	// console.log(req);
 	console.log(req.body);
 
 	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
@@ -34,7 +34,7 @@ app.post('/turn-on', function(req, res) {
 
 app.post('/turn-off', function(req, res) {
 	res.status(200).end();
-	console.log(req);
+	// console.log(req);
 	console.log(req.body);
 
 	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
