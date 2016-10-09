@@ -37,7 +37,7 @@ def getpipe():
     # line = pipe_actual.readline()
 
 
-    path = "/pipein"
+    path = "/pipe"
     fifo = open(path, "r", 0)
     
     for line in fifo:
