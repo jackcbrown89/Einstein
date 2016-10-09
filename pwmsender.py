@@ -9,6 +9,7 @@ print "hello!!"
 red = 100
 green = 100
 blue = 100
+change = false;
 
 pipe_name = 'pipe'
 path = 'pipe'
@@ -26,6 +27,9 @@ except OSError, e:
 
 
 def sendpwm(R, G, B):
+    if change is True
+        GPIO.cleanup()
+        change = false
     print "sendPWM"
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
