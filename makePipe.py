@@ -5,11 +5,11 @@ tmpdir = ""
 filename = os.path.join(tmpdir, 'pipe')
 print "filename: " + filename
 try:
-    os.mkfifo(filename)
-    # fifo = open(filename, 'w')
+    # os.mkfifo(filename)
+    fifo = open(filename, 'w')
 except IOError, e:
     print "Failed to create FIFO: %s" % e
-fifo = open(filename, 'w')
+# fifo = open(filename, 'w')
     # write stuff to fifo
 fifo.write(sys.argv[1] + "," + sys.argv[2] + "," + sys.argv[3])
 print "wrote \t" + sys.argv[1] + "," + sys.argv[2] + "," + sys.argv[3]
