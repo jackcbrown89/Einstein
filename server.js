@@ -3,7 +3,7 @@
 const PORT = 5000;
 
 var gpio = require("pi-gpio");
-var pin = 14;
+var pin = 8;
 // Requires
 var express = require('express');
 var app = express();
