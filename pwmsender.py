@@ -8,8 +8,8 @@ import thread
 pipe_name = 'pipe'
 path = 'pipe'
 try:
+    fcntl.fcntl(path, fcntl.F_SETFL, os.O_NONBLOCK)
     fifo = open(path, "r", 0)
-    # fcntl.fcntl(path, fcntl.F_SETFL, os.O_NONBLOCK)
 except OSError, e:
     print "Failed to create FIFO: %s" % e
     # exit here or something?
@@ -42,20 +42,19 @@ def getpipe():
     # pipein = open(pipe_name, 'r')
 
     path = "pipe"
-    try:
-        fifo = open(path, "r", 0)
-    except OSError, e:
-        print "Failed to create ??: %s" % e
-    else:
-        for line in fifo:
-            print "Received: " + line,
-            # if(line is not None):
-            line = line.split(",")
-            red = line[0]
-            green = line[1]
-            blue = line[2]
-        fifo.close()
-
+    # try:
+        # fifo = open(path, "r", 0)
+    # except OSError, e:
+        # print "Failed to create ??: %s" % e
+    # else:
+    for line in fifo:
+        print "Received: " + line,
+        # if(line is not None):
+        line = line.split(",")
+        red = line[0]
+        green = line[1]
+        blue = line[2]
+        
 
 
 def start():
