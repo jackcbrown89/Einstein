@@ -5,10 +5,16 @@ import threading
 import os, fcntl
 import thread
 
-pipe_name = 'pipe_test'
+pipe_name = 'pipe'
+try:
+    fifo = open(path, "r", 0)
+    fcntl.fcntl(fifo, fcntl.F_SETFL, os.O_NONBLOCK)
+except OSError, e:
+    print "Failed to create FIFO: %s" % e
+    # exit here or something?
+
 # pipe_actual = open(pipe_name, 'r')
 
-fcntl.fcntl(pipe_actual, fcntl.F_SETFL, os.O_NONBLOCK)
 
 red = 100
 green = 100
@@ -34,14 +40,14 @@ def getpipe():
     print("GETPIPE pwmSENDER")
     # pipein = open(pipe_name, 'r')
 
-    # line = pipe_actual.readline()
+    # 
 
 
     path = "pipe"
     try:
-        fifo = open(path, "r", 0)
+        line = fifo.readline()
     except OSError, e:
-        print "Failed to create FIFO: %s" % e
+        print "Failed to create ??: %s" % e
     else:
         for line in fifo:
             print "Received: " + line,
