@@ -27,7 +27,7 @@ except OSError, e:
 
 
 def sendpwm(R, G, B):
-    if change == 1
+    if change == 1:
         GPIO.cleanup()
         change = 0
     print "sendPWM"
