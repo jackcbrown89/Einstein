@@ -1,6 +1,17 @@
 import RPi.GPIO as GPIO
-#import os, time, sys
+import sys
+import time, os
+import threading
+import os, fcntl
+import thread
+
 pipe_name = 'pipe_test'
+
+fcntl.fcntl(pipe_name, fcntl.F_SETFL, os.O_NONBLOCK)
+
+red = 100
+green = 100
+blue = 100
 
 def sendpwm(R, G, B):
     GPIO.setmode(GPIO.BOARD)
@@ -15,11 +26,30 @@ def sendpwm(R, G, B):
     p2.start(1)
     p3.start(1)
 
-"""def parent():
-    pipein = open(pipe_name, 'r')
-    while True:
-        line = pipein.readline()[:-1]
-        print 'Parent %d got "%s" at %s' % (os.getpid(), line, time.time())"""
+    time.wait(1)
 
-#sendpwm(100, 100, 100)
-sendpwm(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]))
+
+def getpipe():
+    print("Hello")
+    pipein = open(pipe_name, 'r')
+    line = pipein.readline()
+    if(line is not None):
+        line = line.split(",")
+        red = line[0]
+        green = line[1]
+        blue = line[2]
+
+
+def start():
+    while True:
+        sendpwm(red, green, blue)
+        getpipe()
+
+
+
+# thread.start_new_thread(getpipe())
+
+
+# sendpwm(100, 100, 100)
+start()
+#sendpwm(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]))
