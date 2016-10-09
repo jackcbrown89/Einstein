@@ -1,10 +1,13 @@
 import os, time, sys
+import errno
+
 pipe_name = 'pipe_test'
 
 def child():
 	# os.mkfifo("")
 	path = "/pipe"
-	os.mkfifo(path)
+	# try
+		# os.mkfifo(path)
 	print "path: "
 	print path
 	fifo = open(path, "w")
