@@ -88,7 +88,7 @@ def start():
     global green
     global change
     print "beginning of start"
-    while True:
+    while 1==1:
         print "RED: " + str(red) + " GREEN: " + str(green) + " blue: " + str(blue)
         sendpwm()
         getpipe()
