@@ -12,23 +12,47 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
+var PythonShell = require('python-shell');
+
+
 
 app.get('/', function(res) {
 	// res.sendfile("public/index.html");
 });
 
+var options = {
+  mode: 'text',
+  pythonPath: 'path/to/python',
+  pythonOptions: ['-u'],
+  scriptPath: 'path/to/my/scripts',
+  args: ['value1', 'value2', 'value3']
+};
 
-app.post('/turn-on', function(req, res) {
+app.post('/change-val', function(req, res) {
 	res.status(200).end();
-	// console.log(req);
-	console.log(req.body);
+	console.log("TURN ON");
+	var red = req.body.redVal;
+	var blue = req.body.blueVal;
+	var green = req.body.greenVal;
+	var options = {
+		//pythonPath: 'path/to/python',
+		//scriptPath: 'path/to/my/scripts',
+		args: [red, blue, green];
+	};
 
-	gpio.open(pin, "output", function(err) {		// Open pin 16 for output 
+	PythonShell.run('makePipe.py', options, function (err, results) {
+		if (err) throw err;
+		// results is an array consisting of messages collected during execution
+		console.log('results: %j', results);
+	});
+
+
+	/*gpio.open(pin, "output", function(err) {		// Open pin 16 for output 
 		gpio.write(pin, 1, function() {			// Set pin 16 high (1) 
 		    gpio.close(pin);
 		    console.log("ON!");						// Close pin 16 
 		});
-	});
+	});*/
 });
 
 
