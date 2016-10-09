@@ -6,7 +6,7 @@ filename = os.path.join(tmpdir, 'pipe')
 print filename
 try:
     os.mkfifo(filename)
-except OSError, e:
+except IOError, e:
     print "Failed to create FIFO: %s" % e
 fifo = open(filename, 'w')
     # write stuff to fifo
