@@ -9,7 +9,7 @@ print "hello!!"
 red = 100
 green = 100
 blue = 100
-change = 0;
+change = 0
 
 pipe_name = 'pipe'
 path = 'pipe'
