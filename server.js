@@ -18,14 +18,27 @@ app.get('/', function(res) {
 });
 
 
-app.post('/change-val', function(req, res) {
+app.post('/turn-on', function(req, res) {
 	res.status(200).end();
 	console.log(req);
 	console.log(req.body);
 
-	gpio.open(14, "output", function(err) {		// Open pin 16 for output 
-		gpio.write(14, 1, function() {			// Set pin 16 high (1) 
-		    gpio.close(14);						// Close pin 16 
+	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
+		gpio.write(8, 1, function() {			// Set pin 16 high (1) 
+		    gpio.close(8);						// Close pin 16 
+		});
+	});
+});
+
+
+app.post('/turn-off', function(req, res) {
+	res.status(200).end();
+	console.log(req);
+	console.log(req.body);
+
+	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
+		gpio.write(8, 0, function() {			// Set pin 16 high (1) 
+		    gpio.close(8);						// Close pin 16 
 		});
 	});
 });
