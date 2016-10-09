@@ -11,7 +11,7 @@ except IOError, e:
 fifo = open(filename, 'w')
     # write stuff to fifo
 fifo.write(sys.argv[1] + "," + sys.argv[2] + "," + sys.argv[3])
-
+print "wrote \t" + sys.argv[1] + "," + sys.argv[2] + "," + sys.argv[3]
 # print >> fifo, "hello"
 fifo.close()
 # os.remove(filename)
