@@ -44,7 +44,7 @@ def getpipe():
         print "Failed to create FIFO: %s" % e
     else:
         for line in fifo:
-            # print "Received: " + line,
+            print "Received: " + line,
             # if(line is not None):
             line = line.split(",")
             red = line[0]
