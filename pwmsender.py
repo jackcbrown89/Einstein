@@ -5,6 +5,11 @@ import threading
 import os, fcntl
 import thread
 
+print "hello!!"
+red = 100
+green = 100
+blue = 100
+
 pipe_name = 'pipe'
 path = 'pipe'
 try:
@@ -19,10 +24,6 @@ except OSError, e:
 
 # pipe_actual = open(pipe_name, 'r')
 
-print "hello!!"
-red = 100
-green = 100
-blue = 100
 
 def sendpwm(R, G, B):
     print "sendPWM"
@@ -68,7 +69,6 @@ def start():
     while True:
         print "RED: " + str(red) + " GREEN: " + str(green) + " blue: " + str(blue)
         sendpwm(red, green, blue)
-
         getpipe()
 
 
