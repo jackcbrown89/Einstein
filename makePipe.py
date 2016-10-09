@@ -9,7 +9,9 @@ except OSError, e:
     print "Failed to create FIFO: %s" % e
 fifo = open(filename, 'w')
     # write stuff to fifo
-print >> fifo, "hello"
+fifo.write(sys.argv[1] + "," + sys.argv[2] + "," + sys.argv[3])
+
+# print >> fifo, "hello"
 fifo.close()
 # os.remove(filename)
 
