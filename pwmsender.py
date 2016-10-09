@@ -49,6 +49,7 @@ def sendpwm(R, G, B):
     print("green's good")
     p3 = GPIO.PWM(18, float(B))
     print("blue's good")
+    p1.start(1)
     p2.start(1)
     p3.start(1)
     print "time sleep"
