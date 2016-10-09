@@ -6,9 +6,9 @@ import os, fcntl
 import thread
 
 pipe_name = 'pipe_test'
-pipe_actual = open(pipe_name, 'r')
+# pipe_actual = open(pipe_name, 'r')
 
-fcntl.fcntl(pipe_actual, fcntl.F_SETFL, os.O_NONBLOCK)
+# fcntl.fcntl(pipe_actual, fcntl.F_SETFL, os.O_NONBLOCK)
 
 red = 100
 green = 100
@@ -37,7 +37,7 @@ def getpipe():
     # line = pipe_actual.readline()
 
 
-    path = ""
+    path = "/pipe"
     fifo = open(path, "r", 0)
     
     for line in fifo:

@@ -3,7 +3,7 @@ pipe_name = 'pipe_test'
 
 def child():
 	# os.mkfifo("")
-	path = ""
+	path = "/pipe"
 	os.mkfifo(path)
 
 	fifo = open(path, "w")
