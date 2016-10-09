@@ -27,7 +27,7 @@ def sendpwm(R, G, B):
     p2.start(1)
     p3.start(1)
 
-    time.wait(1)
+    time.sleep(1)
 
 
 def getpipe():
@@ -37,7 +37,7 @@ def getpipe():
     # line = pipe_actual.readline()
 
 
-    path = "/pipe"
+    path = "/pipein"
     fifo = open(path, "r", 0)
     
     for line in fifo:
