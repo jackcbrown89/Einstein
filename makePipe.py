@@ -3,7 +3,7 @@ import time, sys
 
 tmpdir = ""
 filename = os.path.join(tmpdir, 'pipe')
-print filename
+print "filename: " + filename
 try:
     os.mkfifo(filename)
 except IOError, e:
