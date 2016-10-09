@@ -1,11 +1,8 @@
 import RPi.GPIO as GPIO
-import sys
-import time
-import asyncio
-from rx import Observable
+import os, time, sys
+pipe_name = 'pipe_test'
 
-
-async def sendpwm(R, G, B):
+def sendpwm(R, G, B):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
     GPIO.setup(16, GPIO.OUT)
@@ -18,7 +15,10 @@ async def sendpwm(R, G, B):
     p2.start(1)
     p3.start(1)
 
-def outsideloop:
-
+def parent():
+    pipein = open(pipe_name, 'r')
+    while True:
+        line = pipein.readline()[:-1]
+        print 'Parent %d got "%s" at %s' % (os.getpid(), line, time.time())
 
 sendpwm(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]))
