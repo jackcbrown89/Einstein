@@ -32,6 +32,7 @@ def sendpwm():
     global green
     global change
     if change == 1:
+        print "\t\thas changed"
         #p1.stop()
         #p2.stop()
         #p3.stop()
@@ -62,14 +63,9 @@ def getpipe():
     global green
     global change
     print("GETPIPE pwmSENDER\n")
-    # pipein = open(pipe_name, 'r')
 
     path = "pipe"
-    # try:
-        # fifo = open(path, "r", 0)
-    # except OSError, e:
-        # print "Failed to create ??: %s" % e
-    # else:
+
     for line in fifo:
         print "Received: " + line + "\n",
         # if(line is not None):
