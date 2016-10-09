@@ -55,7 +55,8 @@ def getpipe():
         print "Received: " + line + "\n",
         # if(line is not None):
         line = line.split(",")
-        print "Split lines: " + line + "\n"
+        print "Split lines: "
+        print line
         red = line[0]
         green = line[1]
         blue = line[2]
