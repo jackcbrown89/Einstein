@@ -25,7 +25,8 @@ app.post('/turn-on', function(req, res) {
 
 	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
 		gpio.write(8, 1, function() {			// Set pin 16 high (1) 
-		    gpio.close(8);						// Close pin 16 
+		    gpio.close(8);
+		    console.log("ON!");						// Close pin 16 
 		});
 	});
 });
@@ -38,7 +39,8 @@ app.post('/turn-off', function(req, res) {
 
 	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
 		gpio.write(8, 0, function() {			// Set pin 16 high (1) 
-		    gpio.close(8);						// Close pin 16 
+		    gpio.close(8);	
+		    console.log("off");					// Close pin 16 
 		});
 	});
 });
