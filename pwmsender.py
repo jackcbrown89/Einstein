@@ -38,7 +38,7 @@ def getpipe():
 
 
     path = ""
-    fifo = open(path, "r")
+    fifo = open(path, "r", 0)
     
     for line in fifo:
         # print "Received: " + line,
