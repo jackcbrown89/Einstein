@@ -37,7 +37,7 @@ def sendpwm(R, G, B):
     p1.start(1)
     p2.start(1)
     p3.start(1)
-
+    print "time sleep"
     time.sleep(1)
 
 
@@ -55,6 +55,7 @@ def getpipe():
         print "Received: " + line + "\n",
         # if(line is not None):
         line = line.split(",")
+        print "Split lines: " + line + "\n"
         red = line[0]
         green = line[1]
         blue = line[2]
@@ -62,6 +63,7 @@ def getpipe():
 
 
 def start():
+    print "beginning of start"
     while True:
         print "RED: " + str(red) + " GREEN: " + str(green) + " blue: " + str(blue)
         sendpwm(red, green, blue)
