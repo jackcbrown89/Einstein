@@ -5,18 +5,18 @@ app = Flask(__name__)
 
 @app.route('/start', methods = ['POST'])
 def start():
-	print request.form
+    print request.form
     return 'start'
 
 @app.route('/end', methods = ['POST'])
 def end():
-	print request.form
+    print request.form
     return 'end'
 
 
 @app.route('/change', methods = ['POST'])
 def change():
-	print request.form
+    print request.form
     return 'change'
 
 
