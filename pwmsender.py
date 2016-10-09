@@ -95,10 +95,4 @@ def start():
         getpipe()
 
 
-
-# thread.start_new_thread(getpipe())
-
-
-# sendpwm(100, 100, 100)
 start()
-#sendpwm(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]))
