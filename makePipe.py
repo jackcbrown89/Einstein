@@ -1,6 +1,6 @@
 import os, tempfile
 
-tmpdir = tempfile.mkdtemp()
+tmpdir = "/"
 filename = os.path.join(tmpdir, 'pipe')
 print filename
 try:
