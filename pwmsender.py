@@ -40,9 +40,9 @@ def sendpwm(R, G, B):
     GPIO.setup(16, GPIO.OUT)
     GPIO.setup(18, GPIO.OUT)
     
-    p1 = GPIO.PWM(12, R)
-    p2 = GPIO.PWM(16, G)
-    p3 = GPIO.PWM(18, B)
+    p1 = GPIO.PWM(12, float(R))
+    p2 = GPIO.PWM(16, float(G))
+    p3 = GPIO.PWM(18, float(B))
     p1.start(1)
     p2.start(1)
     p3.start(1)
