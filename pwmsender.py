@@ -8,8 +8,10 @@ import thread
 pipe_name = 'pipe'
 path = 'pipe'
 try:
-    fcntl.fcntl(path, fcntl.F_SETFL, os.O_NONBLOCK)
     fifo = open(path, "r", 0)
+    fd = fifo.fileno()
+    
+    fcntl.fcntl(fd, fcntl.F_SETFL, flag | os.O_NONBLOCK)
 except OSError, e:
     print "Failed to create FIFO: %s" % e
     # exit here or something?
