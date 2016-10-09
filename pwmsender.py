@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
-import sys
+# import sys
 import time
-import threading
-import os, fcntl
+import os
+import fcntl
 import thread
 
 print "hello!!"
