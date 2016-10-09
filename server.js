@@ -20,24 +20,24 @@ app.get('/', function(res) {
 	// res.sendfile("public/index.html");
 });
 
-var options = {
-  mode: 'text',
-  pythonPath: 'path/to/python',
-  pythonOptions: ['-u'],
-  scriptPath: 'path/to/my/scripts',
-  args: ['value1', 'value2', 'value3']
-};
+// var options = {
+//   mode: 'text',
+//   pythonPath: 'path/to/python',
+//   pythonOptions: ['-u'],
+//   scriptPath: 'path/to/my/scripts',
+//   args: ['value1', 'value2', 'value3']
+// };
 
 app.post('/change-val', function(req, res) {
 	res.status(200).end();
 	console.log("TURN ON");
 	var red = req.body.redVal;
-	var blue = req.body.blueVal;
 	var green = req.body.greenVal;
+	var blue = req.body.blueVal;
 	var options = {
 		//pythonPath: 'path/to/python',
 		//scriptPath: 'path/to/my/scripts',
-		args: [red, blue, green];
+		args: [red, green, blue];
 	};
 
 	PythonShell.run('makePipe.py', options, function (err, results) {
