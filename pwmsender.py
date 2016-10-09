@@ -44,7 +44,7 @@ def getpipe():
     path = "pipe"
     try:
         fifo = open(path, "r", 0)
-        line = fifo.readline()
+        # line = fifo.readline()
     except OSError, e:
         print "Failed to create ??: %s" % e
     else:
