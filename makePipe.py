@@ -8,7 +8,7 @@ try:
 except OSError, e:
     print "Failed to create FIFO: %s" % e
 else:
-    fifo = open(filename, os.O_WRONLY)
+    fifo = open(filename, 'w')
     # write stuff to fifo
     print >> fifo, "hello"
     fifo.close()
