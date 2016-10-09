@@ -63,7 +63,7 @@ def getpipe():
 
 def start():
     while True:
-        print "RED: " + red + " GREEN: " + green + " blue: " + blue
+        print "RED: " + str(red) + " GREEN: " + str(green) + " blue: " + str(blue)
         sendpwm(red, green, blue)
 
         getpipe()
