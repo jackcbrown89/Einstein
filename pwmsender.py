@@ -53,7 +53,7 @@ def sendpwm():
     p2.start(1)
     p3.start(1)
     print "time sleep"
-    time.sleep(1)
+    time.sleep(.5)
 
 
 def getpipe():
