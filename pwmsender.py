@@ -6,8 +6,9 @@ import os, fcntl
 import thread
 
 pipe_name = 'pipe_test'
+pipe_actual = open(pipe_name, 'r')
 
-fcntl.fcntl(pipe_name, fcntl.F_SETFL, os.O_NONBLOCK)
+fcntl.fcntl(pipe_actual, fcntl.F_SETFL, os.O_NONBLOCK)
 
 red = 100
 green = 100
@@ -31,8 +32,8 @@ def sendpwm(R, G, B):
 
 def getpipe():
     print("Hello")
-    pipein = open(pipe_name, 'r')
-    line = pipein.readline()
+    # pipein = open(pipe_name, 'r')
+    line = pipe_actual.readline()
     if(line is not None):
         line = line.split(",")
         red = line[0]
