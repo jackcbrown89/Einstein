@@ -37,7 +37,7 @@ app.post('/change-val', function(req, res) {
 	var options = {
 		//pythonPath: 'path/to/python',
 		//scriptPath: 'path/to/my/scripts',
-		args: [red, green, blue];
+		args: [red, green, blue]
 	};
 
 	PythonShell.run('makePipe.py', options, function (err, results) {
