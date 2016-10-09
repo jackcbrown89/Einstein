@@ -32,9 +32,9 @@ def sendpwm(R, G, B):
     global green
     global change
     if change == 1:
-        p1.stop()
-        p2.stop()
-        p3.stop()
+        #p1.stop()
+        #p2.stop()
+        #p3.stop()
         GPIO.cleanup()
         change = 0
     print "sendPWM"
