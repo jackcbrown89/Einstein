@@ -3,7 +3,7 @@
 const PORT = 5000;
 
 var gpio = require("pi-gpio");
-
+var pin = 14;
 // Requires
 var express = require('express');
 var app = express();
@@ -23,9 +23,9 @@ app.post('/turn-on', function(req, res) {
 	// console.log(req);
 	console.log(req.body);
 
-	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
-		gpio.write(8, 1, function() {			// Set pin 16 high (1) 
-		    gpio.close(8);
+	gpio.open(pin, "output", function(err) {		// Open pin 16 for output 
+		gpio.write(pin, 1, function() {			// Set pin 16 high (1) 
+		    gpio.close(pin);
 		    console.log("ON!");						// Close pin 16 
 		});
 	});
@@ -37,9 +37,9 @@ app.post('/turn-off', function(req, res) {
 	// console.log(req);
 	console.log(req.body);
 
-	gpio.open(8, "output", function(err) {		// Open pin 16 for output 
-		gpio.write(8, 0, function() {			// Set pin 16 high (1) 
-		    gpio.close(8);	
+	gpio.open(pin, "output", function(err) {		// Open pin 16 for output 
+		gpio.write(pin, 0, function() {			// Set pin 16 high (1) 
+		    gpio.close(pin);	
 		    console.log("off");					// Close pin 16 
 		});
 	});
