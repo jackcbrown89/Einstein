@@ -16,7 +16,7 @@ except OSError, e:
 
 # pipe_actual = open(pipe_name, 'r')
 
-
+print "hello!!"
 red = 100
 green = 100
 blue = 100
@@ -40,9 +40,6 @@ def sendpwm(R, G, B):
 def getpipe():
     print("GETPIPE pwmSENDER")
     # pipein = open(pipe_name, 'r')
-
-    # 
-
 
     path = "pipe"
     try:
