@@ -27,6 +27,10 @@ except OSError, e:
 
 
 def sendpwm(R, G, B):
+    global red
+    global blue
+    global green
+    global change
     if change == 1:
         GPIO.cleanup()
         change = 0
@@ -47,6 +51,10 @@ def sendpwm(R, G, B):
 
 
 def getpipe():
+    global red
+    global blue
+    global green
+    global change
     print("GETPIPE pwmSENDER\n")
     # pipein = open(pipe_name, 'r')
 
@@ -70,6 +78,10 @@ def getpipe():
 
 
 def start():
+    global red
+    global blue
+    global green
+    global change
     print "beginning of start"
     while True:
         print "RED: " + str(red) + " GREEN: " + str(green) + " blue: " + str(blue)
