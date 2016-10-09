@@ -17,10 +17,10 @@ def child():
 child()    
 
 
-import os
+# import os
 
-path = "/tmp/my_program.fifo"
-os.mkfifo(path)
+# path = "/tmp/my_program.fifo"
+# os.mkfifo(path)
 
-fifo = open(path, "w")
-fifo.close()
+# fifo = open(path, "w")
+# fifo.close()
