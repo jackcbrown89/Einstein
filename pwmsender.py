@@ -26,7 +26,7 @@ except OSError, e:
 # pipe_actual = open(pipe_name, 'r')
 
 
-def sendpwm(R, G, B):
+def sendpwm():
     global red
     global blue
     global green
@@ -94,7 +94,7 @@ def start():
     print "beginning of start"
     while True:
         print "RED: " + str(red) + " GREEN: " + str(green) + " blue: " + str(blue)
-        sendpwm(red, green, blue)
+        sendpwm()
         getpipe()
 
 
