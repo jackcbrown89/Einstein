@@ -36,7 +36,7 @@ def sendpwm():
         #p1.stop()
         #p2.stop()
         #p3.stop()
-        GPIO.cleanup()
+        #GPIO.cleanup()
         change = 0
     print "sendPWM"
     GPIO.setmode(GPIO.BOARD)
