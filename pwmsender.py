@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import sys
-import time, os
+import time
 import threading
 import os, fcntl
 import thread
@@ -77,8 +77,11 @@ def getpipe():
         print "Split lines: "
         print line
         red = line[0]
+        print(red)
         green = line[1]
+        print(green)
         blue = line[2]
+        print(blue)
         change = 1
         
 
