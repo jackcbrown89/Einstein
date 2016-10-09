@@ -38,16 +38,19 @@ def getpipe():
 
 
     path = "/pipe"
-    fifo = open(path, "r", 0)
-    
-    for line in fifo:
-        # print "Received: " + line,
-    # if(line is not None):
-        line = line.split(",")
-        red = line[0]
-        green = line[1]
-        blue = line[2]
-    fifo.close()
+    try:
+        fifo = open(path, "r", 0)
+    except OSError, e:
+        print "Failed to create FIFO: %s" % e
+    else:
+        for line in fifo:
+            # print "Received: " + line,
+            # if(line is not None):
+            line = line.split(",")
+            red = line[0]
+            green = line[1]
+            blue = line[2]
+        fifo.close()
 
 
 
