@@ -37,7 +37,7 @@ def getpipe():
     # line = pipe_actual.readline()
 
 
-    path = "/pipe"
+    path = "pipe"
     try:
         fifo = open(path, "r", 0)
     except OSError, e:
