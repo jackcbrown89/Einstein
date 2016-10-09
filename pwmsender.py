@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import os, time, sys
+#import os, time, sys
 pipe_name = 'pipe_test'
 
 def sendpwm(R, G, B):
@@ -15,10 +15,11 @@ def sendpwm(R, G, B):
     p2.start(1)
     p3.start(1)
 
-def parent():
+"""def parent():
     pipein = open(pipe_name, 'r')
     while True:
         line = pipein.readline()[:-1]
-        print 'Parent %d got "%s" at %s' % (os.getpid(), line, time.time())
+        print 'Parent %d got "%s" at %s' % (os.getpid(), line, time.time())"""
 
+#sendpwm(100, 100, 100)
 sendpwm(float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3]))
