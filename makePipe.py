@@ -1,4 +1,5 @@
 import os, tempfile
+import time, sys
 
 tmpdir = ""
 filename = os.path.join(tmpdir, 'pipe')
