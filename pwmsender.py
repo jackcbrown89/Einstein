@@ -33,12 +33,22 @@ def sendpwm(R, G, B):
 def getpipe():
     print("Hello")
     # pipein = open(pipe_name, 'r')
-    line = pipe_actual.readline()
-    if(line is not None):
+
+    # line = pipe_actual.readline()
+
+
+    path = ""
+    fifo = open(path, "r")
+    
+    for line in fifo:
+        # print "Received: " + line,
+    # if(line is not None):
         line = line.split(",")
         red = line[0]
         green = line[1]
         blue = line[2]
+    fifo.close()
+
 
 
 def start():
