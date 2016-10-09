@@ -5,8 +5,10 @@ def child():
 	# os.mkfifo("")
 	path = "/pipe"
 	os.mkfifo(path)
-
+	print "path: "
+	print path
 	fifo = open(path, "w")
+	print fifo
 	fifo.write(sys.argv[1] + "," + sys.argv[2] + "," + sys.argv[3])
 	fifo.close()
     # pipeout = os.open(pipe_name, os.O_WRONLY)
