@@ -6,6 +6,7 @@ import os, fcntl
 import thread
 
 pipe_name = 'pipe'
+path = 'pipe'
 try:
     fifo = open(path, "r", 0)
     fcntl.fcntl(fifo, fcntl.F_SETFL, os.O_NONBLOCK)
