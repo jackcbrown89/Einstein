@@ -7,11 +7,11 @@ import thread
 
 pipe_name = 'pipe'
 path = 'pipe'
-# try:
-    # fifo = open(path, "r", 0)
+try:
+    fifo = open(path, "r", 0)
     # fcntl.fcntl(path, fcntl.F_SETFL, os.O_NONBLOCK)
-# except OSError, e:
-    # print "Failed to create FIFO: %s" % e
+except OSError, e:
+    print "Failed to create FIFO: %s" % e
     # exit here or something?
 
 # pipe_actual = open(pipe_name, 'r')
@@ -44,7 +44,7 @@ def getpipe():
     path = "pipe"
     try:
         fifo = open(path, "r", 0)
-    except IOError, OSError, e:
+    except OSError, e:
         print "Failed to create ??: %s" % e
     else:
         for line in fifo:
