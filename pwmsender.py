@@ -10,8 +10,9 @@ path = 'pipe'
 try:
     fifo = open(path, "r", 0)
     fd = fifo.fileno()
-    
+    flag = fcntl.fcntl(fd, fcntl.F_GETFL)
     fcntl.fcntl(fd, fcntl.F_SETFL, flag | os.O_NONBLOCK)
+
 except OSError, e:
     print "Failed to create FIFO: %s" % e
     # exit here or something?
@@ -40,7 +41,7 @@ def sendpwm(R, G, B):
 
 
 def getpipe():
-    print("GETPIPE pwmSENDER")
+    print("GETPIPE pwmSENDER\n")
     # pipein = open(pipe_name, 'r')
 
     path = "pipe"
@@ -50,7 +51,7 @@ def getpipe():
         # print "Failed to create ??: %s" % e
     # else:
     for line in fifo:
-        print "Received: " + line,
+        print "Received: " + line + "\n",
         # if(line is not None):
         line = line.split(",")
         red = line[0]
